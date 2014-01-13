@@ -1,0 +1,131 @@
+Level 1 codes:
+:git help [command] or git help - for help
+:git config --global user.name "NAME" - set username for all repositories
+:git init -  set new reository w/in current directory / local repository
+:git status - shows what changed since last commit
+:git add [filename1][filename2]..... - add to staging area
+:git config --global user.email [email] - set up email to use
+:git config --global coli.ui true - w/ pretty command line colors
+:git commit -m "NOTES" - to commit
+mkdir [directory_name] - create directory
+cd [directory_name] - goto directory
+git add [file_directory] ex. css/ - add to stage files in a directory
+:git log - shows commit history
+*master - main timeline
+:git add --all - adding to stage all files
+:git add *.[file_type] - add to stage all file with such file_type
+:git add [directory]/.[file_type] - add to stage all files with such file_type in the directory
+:git add "*.[file_type]" - add all files with such file_type in the entire project
+
+Level 2 Codes:
+:git diff - show unstaged differences since last commit
+:git diff --staged - show staged differences
+:git reset HEAD [filename] - to unstage
+*HEAD - last commit in the timeline
+:git checkout -- [filename1] [filename2] ... - blow away/discard all changes since last commit
+:git commit -a -m "NOTES" - add changes from all tracked files / doesn't add new untracked files
+:git reset --soft HEAD^ - undo commit and put back in stagging / move to the commit dependent on the # of -> ^
+:git commit --amend -m "NOTES" - staged to last commit/ whatever is staged is added to the last commit
+:git reset --hard HEAD^ - undo last commit and all changes
+:git reset --hard HEAD^^ - undo last 2 commits and all changes
+SHARING
+*origin - name of remote repository
+:git remote add origin [URL] - adding a remote repository
+:git remote -v -> show all remote repository
+:git push -u [repository_name] [local_branch to push] or git push- push to repository
+:git pull - pull changes gown from the remote & sync local repository
+heroku create - creates heroku remote repository
+git push heroku master - push to heroku remote
+*dont edit anything such as commit -a, reset ...... after push
+
+
+Level 3 codes:
+cloning and branching
+:git clone [URL] - clone repository
+:git clone [URL] [repository_name] - change name of reposiroty
+:git remote -v - for checking repository
+:git branch [branch_name] - creating branch
+:git branch - checking branch being used
+:git checkout [branch_name] - to go to specific branch
+:ls - list all files in directory
+:mkdir - create directory
+:echo "[Message] > [file].txt - puts the message in the file
+:cd [directory_name] - for transferring directory
+:git merge [branch_name] - merging branch
+:git branch -d [branch_name] - deleting branch
+:git checkout -b admin - creates and checks out branch // for admin usage
+
+Level 4 codes:
+Collaboration Scenarios
+: remove stuffies =))
+
+Level 5 codes:
+Branching
+:git push origin [branch_name] - links local branch to remote branch (tracking)
+:git branch -r - see all remote branches
+:git remote show origin - show remote branches
+:git push origin :[branch_name] - removing remote branch
+:git branch -d [branch_name] - delete local branch manually
+:git branch -D [branch_name] - totally delete despite errors/conflict
+:git remote prune origin - clean up deleted remote branches or stale stuffs
+tags - reference to a commit
+:git tag - list all tags
+:git checkout [tag] - check out code at commit/release
+:git tag -a [tag_name] -m "note"- add new tag
+:git push --tags - push new tags 
+
+Level 6 codes:
+Rebase
+:git fetch - pulls down changes but dont merge
+rebase - move all changes in master to temporary area
+- run all origin/master commits
+- run all commits in termporay, one at a time
+:git rebase [branch]
+:git rebase --continue - when problem solved
+:git rebase --skip - when prefer to skip patch
+:git rebase --abort - checkout original branch and stop rebase ruhn
+
+
+Level 7 codes:
+:git config --global color.ui true - emphasis commit hash
+:git log --pretty=oneline - outputs Sha hash at the beginning and message right after
+log format
+:git log --pretty=format:"%h %ad- %s [%an]"
+	%ad - author date
+	%an - author name
+	%h - SHA hash
+	%s - subject
+	%d - ref names
+:git log --oneline -p  - patch output:to show what each commit change
+:git log --oneline --stat - show how many lines were added and deleted in each commit
+:git log --oneline --graph - visual representation of the branch merging into the master
+date ranges
+:git log --until=1.minute ago -> until
+:git log --since=1.day.ago -> since(days)
+:git log --since=1.hout.ago -> since(hours)
+:git log --since=1.month.ago --until=2.weeks.ago ->since & until(relative)
+:git log --since=2000-01-01 --until=2012-12-21 ->since&until(absolute)
+:git diff - difference since last commit
+:git diff HEAD^ -  parent of latest commit
+:git log -p - displays diff along with log
+:git diff HEAD^^ -  grandparent of latest commit
+:git diff HEAD~5 -  5 commits ago
+:git diff HEAD^..HEAD -  second most recent commit vs most recent
+:git diff SHA..SHA - range of SHAs
+:git diff SHA[abv]...sha[abv] - range of abbreaviate SHAs
+:git diff master bird - diff between two branches
+:git -------- time diff as well
+:git blame [filename] --date short
+:-xclude file
+:git rm [file_name] - delete
+:git rm --cached [log_file] - stop tracking
+--after untrack
+:git add .gitignore
+:git commit -m "notes"
+:git config --list - listing configurations
+
+
+
+
+
+
